@@ -24,7 +24,6 @@ const OldTasksList = () => {
     }, []);
 
     const onAsideItemClickApp = (title) => {
-        console.log(title)
         if (title === 'All') return setCurrentTasks(tasks);
         const task = tasks.filter(x => x.title === title);
         setCurrentTasks(task);

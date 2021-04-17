@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const NavLogin = () => (
     <Fragment>
-        <Link to='/auth/login' className='header-item'>Login</Link>
-        <Link to='/auth/register' className='header-item'>Register</Link>
+        <Link to='/auth/login'><div className='header-item'>Login</div></Link>
+        <Link to='/auth/register'><div className='header-item'>Register</div></Link>
     </Fragment>
 );
 export default NavLogin;

@@ -160,7 +160,7 @@ const DragNDrop = () => {
             .dnd-item{
                 color: blue;
                 background-color: white;
-                min-height: 150px;
+                min-height: 20.5vh;
                 border-radius: 5px;
                 display: flex;
                 align-items: center;
@@ -169,13 +169,11 @@ const DragNDrop = () => {
             .dnd-item:hover{
                 cursor: pointer;
             }
-            .dnd-item *{
-                font-size: 1.2rem;
-            }
             .dnd-item:not(:last-of-type){
                 margin-bottom: .5rem;
             }
             .dnd-item-title {
+                font-size: 1.2rem;
                 font-weight: bold;
                 font-weight: bold;
                 padding: 1.1rem 0;
@@ -193,7 +191,7 @@ const DragNDrop = () => {
             .div-dnd-help {
                 display: flex;
                 justify-content: space-around;
-                padding: 1rem;
+                padding: 0.9rem;
             }
             .dnd-buttons {
                 display: flex;

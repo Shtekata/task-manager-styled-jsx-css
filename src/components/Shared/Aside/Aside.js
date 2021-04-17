@@ -1,11 +1,29 @@
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 const Aside = ({ labels, onAsideItemClick }) => {
+    const [index, setIndex] = useState(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (
+            !location.pathname.includes('/home') &&
+            !location.pathname.includes('/tasks/add') &&
+            !location.pathname.includes('/old-tasks') &&
+            !location.pathname.includes('/about') &&
+            !location.pathname.includes('/musical') &&
+            !location.pathname.includes('/contact-us') &&
+            !location.pathname.includes('/ala-bala')
+        ) { setIndex(null) };
+    },[index, location.pathname]);
+
     return (
         <aside className='aside'>
             {labels.map((x, i) =>
-                <NavLink key={i} to={`/${x[0]}`} className='aside-item' onClick={() => onAsideItemClick(x[1])}>{x[1]}</NavLink>
+                <NavLink key={i} to={`/${x[0]}`} onClick={() => { onAsideItemClick(x[1]); setIndex(x => i); }}>
+                    <div className={`aside-item`+`${index===i?' active':''}`}>{x[1]}</div>
+                </NavLink>
             )}
             <style jsx>{`
             .aside{
